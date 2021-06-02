@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2);
+}
+
+body {
+  font-family: Roboto-Bold;
+  font-size: 84px;
+  color: #37474f;
+}
