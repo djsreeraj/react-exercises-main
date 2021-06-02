@@ -1,12 +1,19 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import './Time.css'
 
-const Time:FC=  () => {
+const Time:FC = () => {
    let date: Date = new Date();
-    return (    
+
+   const [currentDate, setCurrentDate] = useState<Date>(date);
+
+   useEffect(() => {
+          setCurrentDate(new Date());
+    }, [currentDate]);
+
+   return (    
         
            <p className="time">
-                {date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}
+                {currentDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}
            </p>        
     )
 }
