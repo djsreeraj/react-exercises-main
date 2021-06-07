@@ -1,8 +1,9 @@
 import { FC } from "react";
+import Countries from "./components/Countries";
 const App: FC = () => {
   return (
     <div>
-      <p>Country List</p>
+      <Countries />
     </div>
   );
 };

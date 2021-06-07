@@ -11,11 +11,13 @@
   "author": "Sreeraj Melath",
   "license": "UNLICENSED",
   "dependencies": {
+    "@apollo/client": "^3.3.19",
     "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/runtime": "^7.14.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.6",
+    "graphql": "^15.5.0",
     "html-webpack-plugin": "^5.3.1",
     "identity-obj-proxy": "^3.0.0",
     "mobx": "^6.3.2",
