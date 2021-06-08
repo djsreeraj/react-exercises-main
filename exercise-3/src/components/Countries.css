@@ -32,3 +32,13 @@ input {
   border-radius: 5px;
   padding: 10px;
 }
+
+ul {
+  list-style: none;
+}
+
+.coutries__continent__results {
+  height: 30vh;
+  width: 30vh;
+  overflow: auto;
+}
