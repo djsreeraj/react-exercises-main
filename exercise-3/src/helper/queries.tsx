@@ -5,12 +5,9 @@ export const COUNTRY_INFO = gql`
     country(code: $code) {
       name
       code
-      native
-      capital
       emoji
       currency
       languages {
-        code
         name
       }
     }
