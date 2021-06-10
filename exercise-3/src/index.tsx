@@ -1,11 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import './index.css'
+import ReactDOM from "react-dom";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import App from "./App";
+import "./index.css";
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  uri: "https://countries.trevorblades.com",
+});
 
 ReactDOM.render(
-    <div>
-       <App/>
-    </div>,
-    document.getElementById('root')
+  <div>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </div>,
+  document.getElementById("root")
 );
