@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { COUNTRY_INFO } from "../helper/queries";
 import { ChangeEvent, useState } from "react";
 
-const CountryInfo = ({ code }: Props) => {
+export const CountryInfo = ({ code }: Props) => {
   if (code.length > 1) {
     const { loading, error, data } = useQuery(COUNTRY_INFO, {
       variables: { code },
@@ -15,11 +15,14 @@ const CountryInfo = ({ code }: Props) => {
     if (data.country && data.country !== null) {
       return (
         <ul>
-          <li> Name: {data.country.name} </li>
-          <li> Code: {data.country.code} </li>
-          <li> Currency: {data.country.currency}</li>
-          <li>Flag:{data.country.emoji} </li>
-          <li>
+          <li data-testid="countryName"> Name: {data.country.name} </li>
+          <li data-testid="countryCode"> Code: {data.country.code} </li>
+          <li data-testid="countryCurrency">
+            {" "}
+            Currency: {data.country.currency}
+          </li>
+          <li data-testid="countryFlag">Flag: {data.country.emoji} </li>
+          <li data-testid="countryLanguage">
             Languages:
             {data.country.languages.map((item: language, index: number) => (
               <span key={index}> {(index ? ", " : "") + item.name} </span>

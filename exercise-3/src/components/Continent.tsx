@@ -3,7 +3,7 @@ import { Props, country } from "../helper/types";
 import { useQuery } from "@apollo/client";
 import { ChangeEvent, useState } from "react";
 
-const ContinentInfo = ({ code }: Props) => {
+export const ContinentInfo = ({ code }: Props) => {
   if (code.length > 1) {
     const { loading, error, data } = useQuery(CONTINENT_INFO, {
       variables: { code },
@@ -14,8 +14,10 @@ const ContinentInfo = ({ code }: Props) => {
 
     if (data.continent && data.continent !== null) {
       return (
-        <ul>
-          <h4>Countries of {data.continent.name}</h4>
+        <ul data-testid="continentDetails">
+          <h4 data-testid="continentName">
+            Countries of {data.continent.name}
+          </h4>
           {data.continent.countries.map((item: country, index: number) => (
             <li key={index}>
               {item.emoji} {item.name}
