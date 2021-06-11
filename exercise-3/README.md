@@ -1,6 +1,6 @@
 # Final Output
 
-(./output_screenshot.JPG)
+![Output 1](./output_screenshot.JPG)
 
 # Exercise 1
 
