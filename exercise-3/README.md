@@ -1,3 +1,7 @@
+# Final Output
+
+(./output_screenshot.JPG)
+
 # Exercise 1
 
 ![Exercise 1](./screenshot.png)
