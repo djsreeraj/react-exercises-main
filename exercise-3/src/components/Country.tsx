@@ -15,15 +15,22 @@ export const CountryInfo = ({ code }: Props) => {
     if (data.country && data.country !== null) {
       return (
         <ul>
-          <li data-testid="countryName"> Name: {data.country.name} </li>
-          <li data-testid="countryCode"> Code: {data.country.code} </li>
-          <li data-testid="countryCurrency">
-            {" "}
-            Currency: {data.country.currency}
+          <li data-testid="countryName">
+            <label> Name : </label> {data.country.name}
           </li>
-          <li data-testid="countryFlag">Flag: {data.country.emoji} </li>
+          <li data-testid="countryCode">
+            <label>Code : </label>
+            {data.country.code}{" "}
+          </li>
+          <li data-testid="countryCurrency">
+            <label>Currency : </label>
+            {data.country.currency}
+          </li>
+          <li data-testid="countryFlag">
+            <label>Flag :</label> {data.country.emoji}
+          </li>
           <li data-testid="countryLanguage">
-            Languages:
+            <label>Languages :</label>
             {data.country.languages.map((item: language, index: number) => (
               <span key={index}> {(index ? ", " : "") + item.name} </span>
             ))}
@@ -53,7 +60,7 @@ const Country = () => {
         value={countryCode}
       />
 
-      <div className="coutries__continent__results">
+      <div className="countries__continent__results">
         <CountryInfo code={countryCode} />
       </div>
     </div>

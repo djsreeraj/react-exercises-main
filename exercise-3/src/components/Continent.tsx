@@ -20,7 +20,8 @@ export const ContinentInfo = ({ code }: Props) => {
           </h4>
           {data.continent.countries.map((item: country, index: number) => (
             <li key={index}>
-              {item.emoji} {item.name}
+              <span className="country__emoji"> {item.emoji}</span>
+              {item.name}
             </li>
           ))}
         </ul>
@@ -47,7 +48,7 @@ const Continent = () => {
         placeholder="Enter Continent Code ( eg: EU )"
         value={continentCode}
       />
-      <div className="coutries__continent__results">
+      <div className="countries__continent__results">
         <ContinentInfo code={continentCode} />
       </div>
     </div>
